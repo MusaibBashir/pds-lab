@@ -7,8 +7,8 @@ int main() {
     scanf("%d %d", &nr, &dr);
 
     int q, r, i = 0, rep = 0, rep_start = -1;
-    int ques[100] = {0};
-    int rem[100] = {0};
+    int ques[30] = {0};
+    int rem[30] = {0};
 
     printf("%d.", nr / dr);
 
