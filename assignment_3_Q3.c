@@ -6,7 +6,7 @@ int main() {
     printf("Enter the numerator and denominator: ");
     scanf("%d %d", &nr, &dr);
 
-    int q, r, i = 0, rep = 0, rep_start = -1;
+    int q, r, i = 0,j, rep = 0, rep_start = -1;
     int ques[30] = {0};
     int rem[30] = {0};
 
@@ -21,7 +21,7 @@ int main() {
         ques[i] = q;
         rem[i] = r;
 
-        for (int j = 0; j < i; j++) {
+        for (j = 0; j < i; j++) {
             if (ques[j] == q && rem[j] == r) {
                 rep = 1;
                 rep_start = j;
@@ -37,13 +37,13 @@ int main() {
         i++;
     }
 
-    for (int j = 0; j < rep_start; j++) {
+    for (j = 0; j < rep_start; j++) {
         printf("%d", ques[j]);
     }
 
     if (rep) {
         printf("(");
-        for (int j = rep_start; j < i; j++) {
+        for (j = rep_start; j < i; j++) {
             printf("%d", ques[j]);
         }
         printf(")");
