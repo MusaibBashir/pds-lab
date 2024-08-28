@@ -177,11 +177,11 @@ int main()
 
         if (maxvow==vowa)
             printf("A is the most appearing vowel and appears %d times in the name\n", maxvow);
-        else if (maxvow==vowa)
+        else if (maxvow==vowe)
             printf("E is the most appearing vowel and appears %d times in the name\n", maxvow);
-        else if (maxvow==vowa)
+        else if (maxvow==vowi)
             printf("I is the most appearing vowel and appears %d times in the name\n", maxvow);
-        else if (maxvow==vowa)
+        else if (maxvow==vowo)
             printf("O is the most appearing vowel and appears %d times in the name\n", maxvow);
         else
             printf("U is the most appearing vowel and appears %d times in the name\n", maxvow);
