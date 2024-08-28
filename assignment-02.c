@@ -166,6 +166,7 @@ int main()
             vowo+=1;
         else if (name=='u')
             vowu+=1;
+   printf("%c", name);
    }while(name!='\n');
    totalvow=vowa+vowe+vowi+vowo+vowu;
         printf("Total Vowels= %d\n", totalvow);
