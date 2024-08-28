@@ -44,6 +44,7 @@ int main()
 
  printf("\n\n");//To just make it visually easy to see different sections of output
 
+    
     /*Part C*/
     printf("Multiplication Table:\n");
    int i;
@@ -74,6 +75,8 @@ int main()
         printf("\n");
     }
  printf("\n\n");
+    
+    
     /*Part E*/
     int b,count=0;
     do{
@@ -86,6 +89,8 @@ int main()
         printf("No. of times incorrect input was entered: %d\n", count-1); //Count-1 because one input is correct out of all the inputs given
 
  printf("\n\n");
+    
+    
     /*Part F*/
    int revb=0;
    temp=b;
@@ -97,6 +102,8 @@ int main()
    }
    printf("Reverse of B: %d\n", revb);
 
+   
+   
     /*Part G*/
    if(a==reva)  //to reduce number of comparisons I've broken the conditions
    {
@@ -112,6 +119,8 @@ int main()
 
 
  printf("\n\n");
+    
+    
     /*Part H*/
    int e,cubesum=0;
    do{
@@ -147,11 +156,14 @@ int main()
    if(cubesum==k)
         printf("%d\t",k);
    }
+ 
  printf("\n\n");
+   
+   
    /*Part I*/
    char name;
-   int vowa,vowe,vowi,vowo,vowu, totalvow, maxvow;
-   vowa=vowe=vowi=vowo=vowu=0;
+   int vowa,vowe,vowi,vowo,vowu, totalvow, maxvow,max_vowels_count;
+   vowa=vowe=vowi=vowo=vowu=max_vowels_count=0;
    printf("\nEnter a name:");
    getchar(); //This one catches the/n of the output before it, so that the loop doesn't misbehave
    do{
@@ -176,14 +188,46 @@ int main()
         maxvow=maxvow>vowo?maxvow:vowo;
         maxvow=maxvow>vowu?maxvow:vowu;
 
-        if (maxvow==vowa)
+    // Counting how many vowels have the maximum count, this done to address the case where multiple vowels appear max times.
+    if (vowa == maxvow) 
+        max_vowels_count++;
+    if (vowe == maxvow) 
+        max_vowels_count++;
+    if (vowi == maxvow)
+        max_vowels_count++;
+    if (vowo == maxvow)
+        max_vowels_count++;
+    if (vowu == maxvow)
+        max_vowels_count++;
+
+    // If only one vowel appears max times, we would directly print that
+    if (max_vowels_count == 1) {
+        if (vowa == maxvow) {
             printf("A is the most appearing vowel and appears %d times in the name\n", maxvow);
-        else if (maxvow==vowe)
+        } else if (vowe == maxvow) {
             printf("E is the most appearing vowel and appears %d times in the name\n", maxvow);
-        else if (maxvow==vowi)
+        } else if (vowi == maxvow) {
             printf("I is the most appearing vowel and appears %d times in the name\n", maxvow);
-        else if (maxvow==vowo)
+        } else if (vowo == maxvow) {
             printf("O is the most appearing vowel and appears %d times in the name\n", maxvow);
-        else
+        } else {
             printf("U is the most appearing vowel and appears %d times in the name\n", maxvow);
+        }
+    } else {
+        //In case multiple vowels appear maximum times
+        printf("The most appearing vowels are: ");
+        if (vowa == maxvow)
+            printf("A ");
+        if (vowe == maxvow) 
+            printf("E ");
+        if (vowi == maxvow)
+            printf("I ");
+        if (vowo == maxvow)
+            printf("O ");
+        if (vowu == maxvow)
+            printf("U ");
+        printf("and they appear %d times in the name\n", maxvow); //basically it first prints "The most appearing vowels are: ", then prints the respective vowels and then the times they appear.
+    }
+
+    return 0;
 }
