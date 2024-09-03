@@ -1,3 +1,5 @@
+/*Write a recursive function to search for an element in an array*/
+
 #include <stdio.h>
 
 int recursive_search(int arr[], int size, int target) {
