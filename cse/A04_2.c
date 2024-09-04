@@ -8,7 +8,7 @@ esrevinu olleh
 L ssecnirp si eman ym*/
 
 #include <stdio.h>
-void decrypt(char *arr, int size){
+void decrypt(char arr[], int size){
 if(size==1){
 printf("%c", arr[0]);
 return;}
