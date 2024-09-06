@@ -38,7 +38,7 @@ return curr;
 
 }
 
-int main(void) {
+int main() {
 int num;
 scanf("%d", &num);
 int arr[num];
