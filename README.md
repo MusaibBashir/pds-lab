@@ -9,3 +9,5 @@ Assignment 03: Functions
 Assignment 04: Arrays
 
 Assignment 05: Recursion
+
+Civil-Grouping and Mech- Sum to 100 are must do's.(Challenging Level)
