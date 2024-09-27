@@ -8,7 +8,7 @@ int rec_check_palindrome(char arr[], int start, int end)
         return 1;
     if(arr[start]!=arr[end])
         return 0;
-    return (check_palindrome(arr, start+1, end-1));
+    return (rec_check_palindrome(arr, start+1, end-1));
 }
 
 int check_palindrome(char arr[], int n){
