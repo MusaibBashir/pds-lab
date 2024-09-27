@@ -26,7 +26,7 @@ int main()
     printf("Enter main string: ");
     scanf("%s", A);
     char *s = A;
-    int x, n, m;
+    int n;
     for (n = 0; A[n] != '\0'; n++);
     lower_to_upper(s,n);
     for (int i = 0; i < n; i++)
