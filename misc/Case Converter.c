@@ -2,7 +2,7 @@
 
 #include <stdio.h>
 
-void lower_to_upper(char *s, int n)
+void lower_to_upper(char *s)
 {
     while (*s)
     {
@@ -11,7 +11,7 @@ void lower_to_upper(char *s, int n)
     }
 }
 
-void upper_to_lower(char *s, int n)
+void upper_to_lower(char *s)
 {
     while (*s)
     {
@@ -28,11 +28,11 @@ int main()
     char *s = A;
     int n;
     for (n = 0; A[n] != '\0'; n++);
-    lower_to_upper(s,n);
+    lower_to_upper(s);
     for (int i = 0; i < n; i++)
         printf("%c", A[i]);
     printf("\n");
-    upper_to_lower(s,n);
+    upper_to_lower(s);
     for (int i = 0; i < n; i++)
         printf("%c", A[i]);
     return 0;
