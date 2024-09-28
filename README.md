@@ -10,4 +10,8 @@ Assignment 04: Arrays
 
 Assignment 05: Recursion
 
-Civil-Grouping and Mech- Sum to 100 are must do's.(Challenging Level)
+Assignment 06: Strings
+
+Assignment 07: Arrays
+
+Civil-Grouping, Mech- Sum to 100 and String Byte Reversal(in misc folder) are must do's.(Challenging Level)
