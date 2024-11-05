@@ -1,0 +1,110 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+// Define the linked list node structure
+struct Node {
+    int data;
+    struct Node* next;
+};
+
+// Function to add a new node at the end of the list
+void append(struct Node** head, int data) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = data;
+    newNode->next = NULL;
+    
+    if (*head == NULL) {
+        *head = newNode;
+        return;
+    }
+    
+    struct Node* temp = *head;
+    while (temp->next != NULL) {
+        temp = temp->next;
+    }
+    temp->next = newNode;
+}
+
+// Function to print the linked list
+void printList(struct Node* head) {
+    struct Node* temp = head;
+    while (temp != NULL) {
+        printf("%d", temp->data);
+        temp = temp->next;
+    }
+    printf("\n");
+}
+
+// Function to add two linked lists representing large numbers
+struct Node* addLists(struct Node* num1, struct Node* num2) {
+    struct Node* result = NULL;
+    int carry = 0;
+
+    while (num1 != NULL || num2 != NULL || carry != 0) {
+        int sum = carry;
+
+        if (num1 != NULL) {
+            sum += num1->data;
+            num1 = num1->next;
+        }
+
+        if (num2 != NULL) {
+            sum += num2->data;
+            num2 = num2->next;
+        }
+
+        carry = sum / 10;
+
+        append(&result, sum % 10);
+    }
+
+    return result;
+}
+
+// Function to create a linked list from user input
+struct Node* createListFromInput() {
+    struct Node* head = NULL;
+    struct Node* reversedHead = NULL;
+    char ch;
+    
+    printf("Enter a large number: ");
+    
+    // Read each character until newline
+    while ((ch = getchar()) != '\n' && ch != EOF) {
+        if (ch >= '0' && ch <= '9') {
+            // Insert each digit at the head to build the number in reverse order, this is done for efficeiency as adding on tail would require traversing the list
+            struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+            newNode->data = ch - '0';
+            newNode->next = reversedHead;
+            reversedHead = newNode;
+        }
+    }
+
+    // Reverse the list to preserve original number order
+    while (reversedHead != NULL) {
+        struct Node* nextNode = reversedHead->next;
+        reversedHead->next = head;
+        head = reversedHead;
+        reversedHead = nextNode;
+    }
+    
+    return head;
+}
+
+int main() {
+    // Create linked lists from user input
+    printf("Enter 1st large number:\n");
+    struct Node* list1 = createListFromInput();
+
+    printf("Enter 2nd large number:\n");
+    struct Node* list2 = createListFromInput();
+
+    // Perform addition
+    struct Node* result = addLists(list1, list2);
+
+    // Print the result
+    printf("Sum: ");
+    printList(result);
+
+    return 0;
+}
